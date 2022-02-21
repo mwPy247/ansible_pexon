@@ -41,4 +41,4 @@ With these steps completed, I can access the Nginx server running on my remote v
     - Install nginx: update-cache makes sure to run apt update before installation
     - The last step copies our static webpage to the default nginx folder
  
-We should now see index.html on 127.0.0.1:8080 as rendered by our local browser.
+We should now see index.html on 127.0.0.1:8080 in the local browser.
