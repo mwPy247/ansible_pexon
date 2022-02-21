@@ -6,7 +6,7 @@ the network and then I will explain the playbook and the configuration file.
 1. Install ansible on host
      => https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html 
 3. Verify installation: `ansible —version`
-4. Install a Virtual machine (I used Virtual Box and the ubuntu-20.04.3-desktop-amd64 image)
+4. Install a Virtual machine (I used Virtual Box and the ubuntu-20.04.3-desktop-amd64 image). I decided to call this machine `nginx`.
 5. Setup the network between host and vm to be able to ssh into the vm from the host. I decided to use NAT with port forwarding for this. This is the configuration to be done inside VirtualBox:
     1. Go to network options of the vm and create a NAT adapter with the following port forwarding rule: 
         2. Set host-port to any unused port (I use 2281) 
