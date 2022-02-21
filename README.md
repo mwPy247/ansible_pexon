@@ -28,13 +28,13 @@ the network and then I will explain the playbook and the configuration file.
 12. To access the server add another port forwarding rule (I use 8080 for localhost and 80 for the target vm, as this is the default port nginx listens to) 
 13. Visit 127.0.0.1:8080 in your local browser.
 
-With these steps completed, I can access the Nginx server running on my remote vm within my local browser. Now the last step to be done is to serve a different .html-file. I do this with ansible:
+With these steps completed, I can access the Nginx server running on my remote vm within my local browser. Now the last step to be done is to serve a different .html-file. I do this with Ansible:
 
-# Explanation of files:
-- Hosts: the inventory file. Has only one entry for the vm we use. As the network is configured to forward ports from 127.0.01:2281 to the vm, we have to specify this information here.
-- Specifies where ansible will find the inventory and private key files.
-- index.html: the static web page we want to host via nginx.
-- Playbook.yml
+# Configuration of Ansible:
+- *Hosts*: the inventory file. Has only one entry for the vm we use. As the network is configured to forward ports from 127.0.01:2281 to the vm, we have to specify this information here.
+- *ansible.cfg* Specifies where ansible will find the inventory and private key files.
+- *index.html* the static web page we want to host via nginx.
+- *Playbook.yml* The most important file:
     - We can specify „hosts:all“ in the first line as we only have one machine.
     - „Become: true“ takes care of executing the playbook with root permissions
     - Set system time: this makes sure both system clocks (on target and on host) are synchronized as I encountered errors because of this.
