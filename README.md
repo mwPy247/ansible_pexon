@@ -4,7 +4,7 @@ the network and then I will explain the playbook and the configuration file.
 
 # Ansible Network configuration
 1. Install ansible on host
-    2. => https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html 
+     => https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html 
 3. Verify installation: `ansible —version`
 4. Install a Virtual machine (I used Virtual Box and the ubuntu-20.04.3-desktop-amd64 image)
 5. Setup the network between host and vm to be able to ssh into the vm from the host. I decided to use NAT with port forwarding for this. This is the configuration to be done inside VirtualBox:
@@ -41,16 +41,4 @@ With these steps completed, I can access the Nginx server running on my remote v
     - Install nginx: update-cache makes sure to run apt update before installation
     - Copies our static webpage to the default nginx folder
  
-We now see the following page on 127.0.0.1:8080 in our local browser:
-
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Hello from Ansible!</title>
-</head>
-<body>
-    <h1>Hello from Ansible!</h1>
-    <p>We have just configured Ansible correctly on our host!</p>
-</body>
-</html>
+We should now see index.html on 127.0.0.1:8080 as rendered by our local browser.
