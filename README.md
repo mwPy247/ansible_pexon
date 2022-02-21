@@ -35,10 +35,10 @@ With these steps completed, I can access the Nginx server running on my remote v
 - *ansible.cfg* Specifies where ansible will find the inventory and private key files.
 - *index.html* the static web page we want to host via nginx.
 - *Playbook.yml* The most important file:
-    - We can specify „hosts:all“ in the first line as we only have one machine.
-    - „Become: true“ takes care of executing the playbook with root permissions
-    - Set system time: this makes sure both system clocks (on target and on host) are synchronized as I encountered errors because of this.
-    - Install nginx: update-cache makes sure to run apt update before installation
+    - We can specify `hosts:all` in the first line as we only have one machine.
+    - `Become: true` takes care of executing the playbook with root permissions
+    - Set system time: this makes sure both system clocks (on target and on host) are synchronized (this turned out to be a problem on my setup).
+    - Install nginx: update-cache makes sure to run `apt update` before installation
     - The last step copies our static webpage to the default nginx folder
  
-We should now see index.html on 127.0.0.1:8080 in the local browser.
+We should now see `index.html` on 127.0.0.1:8080 in the local browser.
