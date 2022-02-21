@@ -39,6 +39,6 @@ With these steps completed, I can access the Nginx server running on my remote v
     - „Become: true“ takes care of executing the playbook with root permissions
     - Set system time: this makes sure both system clocks (on target and on host) are synchronized as I encountered errors because of this.
     - Install nginx: update-cache makes sure to run apt update before installation
-    - Copies our static webpage to the default nginx folder
+    - The last step copies our static webpage to the default nginx folder
  
 We should now see index.html on 127.0.0.1:8080 as rendered by our local browser.
