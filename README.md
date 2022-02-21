@@ -1,6 +1,6 @@
-To setup Nginx via Ansible, I decided to use a virtual machine running on VirtualBox. To make this work some
-network configuration has to be done first. In what follows I provide a quick walkthrough of how I set up 
-the network and then I will explain the playbook and the configuration file.
+To setup Nginx via Ansible, it is convenient to use a virtual machine running on VirtualBox. To make this work some
+network configuration has to be done first. In what follows I provide a quick walkthrough of how to set up 
+the network and then the configuration of Ansible and the structure and content of `playbook.yml` is explained.
 
 # Ansible Network configuration
 1. Install ansible on host
