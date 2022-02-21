@@ -1,0 +1,19 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: set system time
+    shell:
+      cmd: sudo hwclock --hctosys  
+
+  - name: install nginx
+    apt: 
+      name: nginx
+      update-cache: yes
+
+  - name: copy index.html
+    copy:
+      src: ~/Projects/nginx/index.html
+      dest: /var/www/html
