@@ -14,8 +14,8 @@ the network and then the configuration of Ansible and the structure and content 
         4. Leave host-ip and guest-ip empty such that default values are used.
 6. Boot the vm and enter the terminal
 7. Configure ssh on the vm (I use MacOS locally as a host, so SSH doesn’t have to be configured here): 
-    1. Make sure that the system is up to date: `sudo apt update`
-    2. Install the ssh server: `sudo apt install ssh-server`
+    1. Make sure that the system is up to date: `sudo apt upgrade`
+    2. Install the ssh server: `sudo apt install openssh-server`
     3. Verfiy installation: `systemctl status sshd` (The SSH-service should be active on the server now)
 8. Verify ssh connection from host to vm: `ssh <target_name> -p <port_number>`. Fill in <target_name> and <port_number> as specified in the port forwarding rule for the vm. In my case <target_name> == nginx@127.0.0.1 and <port_number> == 2281. 
 9. Setup key-based authentication:
